@@ -1,0 +1,768 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Основні стилі */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F6FA;
+  }
+
+  /* Шапка */
+  header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* Навігація */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: #2980B9;
+  }
+
+  /* Вкладки */
+  .tab-content {
+    display: none;
+    padding: 20px;
+  }
+
+  .tab-content:target {
+    display: block;
+  }
+
+  h2 {
+    color: #2980B9;
+  }
+
+  /* Головна сторінка */
+  .home-content {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .home-content h2 {
+    font-size: 2rem;
+    color: #34495E;
+    margin-bottom: 10px;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  /* Кнопка на головній сторінці */
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2980B9;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #3498DB;
+  }
+}
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+ }
+
+/* Header styling with gradient background and shadow */
+header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation link styling */
+.nav-link {
+  margin: 0 10px;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  border: 1px solid black;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+/* Main container styling for centered content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section and title alignment */
+.index-title, .delivery-title, .section-title, .index-text, .center {
+  text-align: center;
+}
+
+/* Review section styling */
+.review {
+  margin-bottom: 20px; /* Spacing between reviews */
+}
+
+.review h3 {
+  text-align: left;
+}
+
+.review p {
+  margin: 0;
+}
+
+/* Delivery section styling */
+.delivery-section {
+  margin-top: 20px;
+}
+
+.delivery-section h2 {
+  margin-top: 20px;
+}
+
+/* Catalog container styling */
+#catalog-container {
+  display: flex;
+  border: 1px solid black;
+}
+
+/* Sidebar styling */
+#catalog-sidebar {
+  width: 20%;
+  border-right: 1px solid black;
+  padding: 10px;
+}
+
+#catalog-sidebar ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+#catalog-sidebar li {
+  margin-bottom: 10px;
+}
+
+/* Main content styling */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Catalog grid layout */
+.catalog-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.catalog-category {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Product styling */
+.catalog-product {
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+
+.catalog-product img {
+  width: 175px;
+  height: 175px;
+}
+
+.catalog-product button {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+/* Hover and active effects for products */
+.catalog-product:hover {
+  background-color: #ccc;
+}
+
+.catalog-product:active {
+  background-color: #aaa;
+}
+
+
+
+/* Градієнт фону для шапки */
+header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для заголовка */
+header h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+/* Стиль для навігації */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+/* Стиль для пунктів меню */
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Активна кнопка */
+nav ul li a[data-page="home"] {
+  background-color: #f31256;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover ефект */
+nav ul li a:hover {
+  color: #12d9f3;
+  box-shadow: 0px 4px 8px rgba(18, 243, 243, 0.5);
+}
+
+/* Hover ефект */
+nav ul li a:hover[data-page="home"] {
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 161, 209, 0.5);
+}
+
+/* Тінь під шапкою */
+header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Вкладки */
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content:target {
+  display: block;
+}
+
+h2 {
+  color: #2980B9;
+}
+
+/* Головна сторінка */
+.home-content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home-content h2 {
+  font-size: 2rem;
+  color: #34495E;
+  margin-bottom: 10px;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Кнопка на головній сторінці */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2980B9;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #3498DB;
+}
+
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Додаткові стилі для покращення вигляду */
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #F2F6FA;
+  margin: 0;
+  padding: 0;
+}
+
+/* Заголовки */
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5em;
+}
+
+/* Описовий текст */
+.description {
+  font-size: 1.1em;
+  color: #444;
+  text-align: justify;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Списки */
+.feature-list, .benefit-list {
+  list-style-type: disc;
+  margin: 0 auto 1em;
+  padding-left: 1.2em;
+  width: 90%;
+  max-width: 800px;
+}
+
+.feature-list li, .benefit-list li {
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+/* Кнопка */
+.button-container {
+  text-align: center;
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+
+
+/* Контейнер для картинки */
+.image-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+/* Стилізація картинки */
+.docker-image {
+  max-width: 100%;
+  height: auto;
+  width: 300px; /* Задайте ширину картинки */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.presentation-topic, .discipline {
+  font-size: 1.2em;
+  margin: 0.2em 0;
+}
+
+.introduction, .author-info {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introduction h2, .author-info h2 {
+  color: #007bff;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.introduction p, .author-info p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #444;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+
+.code-block {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 8px;
+  font-size: 1em;
+  overflow-x: auto;
+  color: #333;
+
+}
+
+.code-block code {
+  font-family: Consolas, monospace;
+}
+
+
+/* Стиль для плавної анімації переходів */
+#content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#content.visible {
+  opacity: 1;
+}

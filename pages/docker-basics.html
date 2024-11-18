@@ -1,0 +1,68 @@
+
+<h2 class="title">Основи Docker'a</h2>
+<p class="description">Вивчення основних понять Docker: образи, контейнери, Dockerfile та Docker Hub.</p>
+
+<!-- Додаємо картинку Docker -->
+<div class="image-container">
+  <img src="img/basics.png" alt="Docker Logo" class="docker-image">
+</div>
+
+<section class="content-section">
+  <h3 class="subtitle">Що таке Docker образи?</h3>
+  <p class="description">Docker образ (image) – це шаблон, який містить усе необхідне для запуску контейнера. Образи можуть включати операційну систему, встановлені програми, конфігураційні файли тощо. Образи є базовою одиницею Docker і можуть зберігатися в публічних або приватних репозиторіях, таких як <strong>Docker Hub</strong>.</p>
+
+  <h4 class="subtitle">Основні команди для роботи з образами:</h4>
+  <ul class="feature-list">
+    <li><code>docker pull [image-name]</code> – завантаження образу з репозиторію.</li>
+    <li><code>docker images</code> – перегляд усіх доступних локально образів.</li>
+    <li><code>docker rmi [image-name]</code> – видалення образу.</li>
+  </ul>
+</section>
+
+<section class="content-section">
+  <h3 class="subtitle">Що таке контейнер?</h3>
+  <p class="description">Контейнер – це запущений екземпляр образу, який виконує певний процес або програму. Контейнери використовують ізольоване середовище для виконання застосунків, що дозволяє уникнути конфліктів залежностей. Контейнери створюються на основі образів і мають власні файлові системи.</p>
+
+  <h4 class="subtitle">Основні команди для роботи з контейнерами:</h4>
+  <ul class="feature-list">
+    <li><code>docker run [image-name]</code> – створення і запуск контейнера з певного образу.</li>
+    <li><code>docker ps</code> – перегляд усіх активних контейнерів.</li>
+    <li><code>docker stop [container-id]</code> – зупинка контейнера.</li>
+    <li><code>docker rm [container-id]</code> – видалення контейнера.</li>
+  </ul>
+</section>
+
+<section class="content-section">
+  <h3 class="subtitle">Dockerfile</h3>
+  <p class="description"><strong>Dockerfile</strong> – це текстовий файл, що містить інструкції для створення Docker образу. У ньому можна вказати базовий образ, скопіювати файли, встановити залежності та визначити команди, які виконуватимуться при запуску контейнера. Dockerfile є ключовим інструментом для автоматизації створення образів.</p>
+
+  <h4 class="subtitle">Приклад Dockerfile:</h4>
+  <pre class="code-block"><code># Вказуємо базовий образ
+FROM python:3.9
+
+# Копіюємо файл з кодом у контейнер
+COPY app.py /app/app.py
+
+# Встановлюємо робочу директорію
+WORKDIR /app
+
+# Встановлюємо необхідні залежності
+RUN pip install -r requirements.txt
+
+# Визначаємо команду для запуску
+CMD ["python", "app.py"]
+        </code></pre>
+</section>
+
+<section class="content-section">
+  <h3 class="subtitle">Docker Hub</h3>
+  <p class="description"><strong>Docker Hub</strong> – це публічний репозиторій образів, де користувачі можуть зберігати та завантажувати образи. Docker Hub містить тисячі готових до використання образів для різних технологій та платформ. Це зручне місце для пошуку базових образів для створення власних контейнерів.</p>
+
+  <h4 class="subtitle">Основні команди для роботи з Docker Hub:</h4>
+  <ul class="feature-list">
+    <li><code>docker pull [image-name]</code> – завантаження образу з Docker Hub.</li>
+    <li><code>docker push [image-name]</code> – завантаження власного образу до Docker Hub.</li>
+  </ul>
+</section>
+
+

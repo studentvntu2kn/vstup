@@ -1,8 +1,91 @@
-
-
-<section class="content-section">
-  <h2 class="subtitle">Вступ</h2>
-  <p class="description"><strong>Docker</strong> – це сучасна платформа для контейнеризації, яка дозволяє запускати застосунки в ізольованих середовищах. Вона активно використовується у розробці та деплойменті програмного забезпечення, допомагаючи спрощувати процеси та підвищувати продуктивність.</p>
-  <p class="description">Ця презентація охоплює основи Docker, пояснює концепцію контейнеризації та демонструє, як Docker допомагає розробникам створювати, тестувати та розгортати застосунки більш ефективно.</p>
+<!-- Головний слайд -->
+<section class="hero-slide">
+    <div class="hero-content">
+        <h3 class="hero-title">Що таке Docker?</h3>
+        <p class="hero-subtitle">
+            Ця презентація охоплює основи Docker, пояснює концепцію контейнеризації та демонструє, як Docker допомагає розробникам створювати, тестувати та розгортати застосунки більш ефективно.
+        </p>
+        <a href="#what-is-docker" data-page="what-is-docker" class="cta-button">Дізнатись більше</a>
+    </div>
 </section>
+
+<style>
+    /* Секція героя з фоновим зображенням */
+    .hero-slide {
+        position: relative;
+        padding: 70px 20px;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to right, rgba(13, 183, 237, 0.39), rgba(10, 188, 194, 0.06)),
+        url('img/prev.png') no-repeat center/cover;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0db7ed;
+        background-color: white;
+        border-radius: 25px;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Затемнення для контрасту */
+    .hero-slide::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        border-radius: 15px;
+    }
+
+    /* Адаптивність */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            font-size: 1rem;
+        }
+    }
+</style>
 

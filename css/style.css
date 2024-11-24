@@ -467,65 +467,107 @@ main {
 
 
 
-/* Градієнт фону для шапки */
-header {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+/* Тінь під шапкою */
+/* Основний стиль хедера */
+.header {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
   color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 3em 1em;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Стилі для заголовка */
-header h1 {
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
+/* Заголовок */
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3em); /* Адаптивний розмір шрифту */
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Анімація для заголовка */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Стиль для навігації */
 nav ul {
   display: flex;
+  flex-wrap: wrap; /* Для адаптивності */
   justify-content: center;
-  gap: 15px;
-  list-style-type: none;
+  gap: 1rem;
+  list-style: none;
   padding: 0;
   margin: 20px 0 0;
 }
 
-/* Стиль для пунктів меню */
+/* Пункти меню */
+nav ul li {
+  margin: 0; /* Забезпечення рівномірності відступів */
+}
+
 nav ul li a {
   color: #ffffff;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 0.75em 1.5em;
   font-weight: bold;
-  transition: color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1em;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Активна кнопка */
+/* Стиль активної кнопки */
 nav ul li a[data-page="home"] {
   background-color: #f31256;
   color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #f31256;
+  box-shadow: 0px 6px 15px rgba(243, 18, 86, 0.4);
 }
 
-/* Hover ефект */
+/* Hover ефект для пунктів меню */
 nav ul li a:hover {
-  color: #12d9f3;
-  box-shadow: 0px 4px 8px rgba(18, 243, 243, 0.5);
-}
-
-/* Hover ефект */
-nav ul li a:hover[data-page="home"] {
+  background-color: #12d9f3;
   color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 161, 209, 0.5);
+  border: 2px solid #12d9f3;
+  box-shadow: 0px 6px 12px rgba(18, 243, 243, 0.5);
+  transform: translateY(-2px);
 }
 
-/* Тінь під шапкою */
-header {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Hover ефект для активної кнопки */
+nav ul li a:hover[data-page="home"] {
+  background-color: #e0104a;
+  box-shadow: 0px 6px 15px rgba(224, 16, 74, 0.5);
 }
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+  .header {
+    padding: 2em 1em;
+  }
+
+  nav ul {
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
+}
+
 
 
 /* Вкладки */
@@ -680,24 +722,25 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
-
-
-.header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 2em 0;
-  text-align: center;
+.docker-image-2 {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    align-self: self-start; /* Розміщує картинку зліва */
+    margin-right: 20px; /* Відступ справа від картинки */
 }
 
-.header h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
+
+
 
 .presentation-topic, .discipline {
   font-size: 1.2em;
   margin: 0.2em 0;
 }
+
+
 
 .introduction, .author-info {
   max-width: 800px;
@@ -719,6 +762,8 @@ body {
   line-height: 1.6;
   color: #444;
 }
+
+
 
 .button-container {
   text-align: center;
@@ -746,6 +791,8 @@ body {
 }
 
 
+
+/* code block */
 .code-block {
   background-color: #f5f5f5;
   padding: 1em;
@@ -761,11 +808,47 @@ body {
 }
 
 
-/* Стиль для плавної анімації переходів */
+/* Анімація появи контенту */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анімація зникнення контенту */
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Стиль для контейнера контенту */
 #content {
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: fadeInScale 0.5s ease forwards;
 }
+
+/* Клас для видимого стану контенту */
 #content.visible {
-  opacity: 1;
+  animation: fadeInScale 0.5s ease forwards;
 }
+
+/* Клас для прихованого стану контенту */
+#content.hidden {
+  animation: fadeOutScale 0.5s ease forwards;
+}
+
+
+

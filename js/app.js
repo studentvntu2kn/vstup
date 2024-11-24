@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const content = document.getElementById("content");
 
-  // Завантаження сторінки при першому запуску
+  // Завантаження "Головної" сторінки при запуску
   loadPage("home");
 
-  // Додавання подій до всіх кнопок навігації
   links.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -42,22 +41,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Функція для завантаження HTML-контенту
   function loadPage(page) {
-    // Анімація зникнення контенту
+    // Додати клас для зникнення контенту
     content.classList.remove("visible");
+    content.classList.add("hidden");
 
     setTimeout(() => {
-      // Завантаження HTML-контенту для вибраної вкладки
+      // Завантажити новий контент
       fetch(`pages/${page}.html`)
-        .then(response => response.text())
-        .then(data => {
-          content.innerHTML = data;
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Не вдалося завантажити сторінку ${page}.html. Статус: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then(data => {
+            content.innerHTML = data;
 
-          // Додавання класу видимості для плавного переходу
-          setTimeout(() => content.classList.add("visible"), 50);
-        })
-        .catch(error => console.error("Помилка завантаження сторінки:", error));
-    }, 500); // Час відповідає transition у CSS
+            // Додати клас для появи нового контенту
+            content.classList.remove("hidden");
+            content.classList.add("visible");
+          })
+          .catch(error => {
+            content.innerHTML = '<p>Сторінка не знайдена.</p>';
+            console.error(error);
+          });
+    }, 500); // Час відповідає тривалості анімації
   }
 });
+
+
+

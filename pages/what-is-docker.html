@@ -1,40 +1,294 @@
-<h2 class="title">Що таке Docker?</h2>
-<p class="description"><strong>Docker</strong> – це платформа для розробки, доставки та запуску застосунків у контейнерах. Контейнер дозволяє ізолювати застосунок разом із його залежностями, що робить його переносимим між різними середовищами, такими як локальні машини, сервери або хмарні платформи.</p>
-
-<!-- Додаємо картинку Docker -->
-<div class="image-container">
-  <img src="img/whdoc.png" alt="Docker Logo" class="docker-image">
+<!-- Додаємо стильний банер з Docker -->
+<div class="hero-section">
+    <div class="hero-content">
+        <img src="img/whdoc.png" alt="Docker Logo" class="docker-image">
+        <h1 class="hero-title">Контейнеризація для всіх</h1>
+        <p class="hero-subtitle">Ізолюйте застосунки, розгортайте швидше, масштабуйте ефективніше.</p>
+        <a href="#about-docker" class="cta-button">Дізнатися більше</a>
+    </div>
 </div>
 
-<h3 class="subtitle">Історія Docker</h3>
-<p class="description">Docker був створений у 2013 році компанією <strong>DotCloud</strong>, яка згодом змінила назву на Docker Inc. Docker з’явився як рішення проблеми сумісності застосунків на різних платформах, пропонуючи легкі, швидкі та ефективні контейнери, що дозволяють розробникам швидше переносити код між різними середовищами.</p>
+<!-- Опис Docker -->
+<section id="about-docker" class="info-section">
+    <h2 class="section-title">Що таке Docker?</h2>
+    <div class="info-container">
+        <div class="info-text">
+            <p><strong>Docker</strong> – це платформа для розробки, доставки та запуску застосунків у контейнерах. Вона забезпечує ізоляцію застосунку разом із залежностями, дозволяючи запускати його на будь-якому середовищі: локальна машина, сервер або хмарна платформа.</p>
+        </div>
+        <div class="info-image">
+            <img src="img/docker-container.png" alt="Docker Container" class="info-illustration">
+        </div>
+    </div>
+</section>
 
-<h3 class="subtitle">Архітектура Docker</h3>
-<p class="description">Docker складається з кількох основних компонентів:</p>
-<ul class="feature-list">
-  <li><strong>Docker Daemon:</strong> фоновий процес, який керує контейнерами та образами, забезпечуючи роботу Docker Engine.</li>
-  <li><strong>Docker CLI:</strong> інтерфейс командного рядка, що дозволяє користувачам взаємодіяти з Docker Daemon для запуску, зупинки та управління контейнерами.</li>
-  <li><strong>Docker Hub:</strong> публічний репозиторій для зберігання образів, де розробники можуть публікувати і використовувати попередньо створені образи.</li>
-</ul>
+<!-- Історія Docker -->
+<section class="timeline-section">
+    <h2 class="section-title">Історія Docker</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <span class="timeline-year">2013</span>
+            <p>Компанія <strong>DotCloud</strong> запускає Docker як інструмент для вирішення проблем сумісності між середовищами.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-year">2015</span>
+            <p>Docker набуває популярності завдяки легкості, швидкості та простоті масштабування.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-year">Сьогодні</span>
+            <p>Docker є стандартом у сфері контейнеризації, який використовують компанії по всьому світу.</p>
+        </div>
+    </div>
+</section>
 
-<h3 class="subtitle">Основні особливості Docker</h3>
-<ul class="feature-list">
-  <li><strong>Легка вага:</strong> Контейнери займають менше ресурсів, ніж віртуальні машини, що дозволяє швидше запускати та масштабувати застосунки.</li>
-  <li><strong>Ізоляція:</strong> Кожен контейнер працює окремо, уникаючи конфліктів між різними версіями бібліотек та залежностей.</li>
-  <li><strong>Переносимість:</strong> Docker-контейнери можна запускати на різних платформах: локальна машина, сервер або хмарні сервіси.</li>
-  <li><strong>Простота використання:</strong> Docker CLI та інші інструменти надають простий інтерфейс для створення, запуску та управління контейнерами.</li>
-</ul>
+<!-- Архітектура Docker -->
+<section class="architecture-section">
+    <h2 class="section-title">Архітектура Docker</h2>
+    <div class="architecture-grid">
+        <div class="architecture-item">
+            <h3>Docker Daemon</h3>
+            <p>Фоновий процес, що керує контейнерами, образами та мережею.</p>
+        </div>
+        <div class="architecture-item">
+            <h3>Docker CLI</h3>
+            <p>Інтерфейс командного рядка для управління Docker-середовищем.</p>
+        </div>
+        <div class="architecture-item">
+            <h3>Docker Hub</h3>
+            <p>Хмарний репозиторій для публікації та використання образів.</p>
+        </div>
+    </div>
+</section>
 
-<h3 class="subtitle">Як працює Docker?</h3>
-<p class="description">Docker використовує <strong>технології контейнеризації Linux</strong>, такі як <strong>cgroups</strong> та <strong>namespaces</strong>, щоб ізолювати ресурси для кожного контейнера. Застосунки упаковуються в образи, які містять усі необхідні залежності та конфігурації. Образ запускається як контейнер, яким керує <strong>Docker Daemon</strong>.</p>
+<!-- Основні особливості -->
+<section class="features-section">
+    <h2 class="section-title">Чому обирають Docker?</h2>
+    <div class="features-list">
+        <div class="feature-item">
+            <h3>Легка вага</h3>
+            <p>Контейнери споживають менше ресурсів, ніж віртуальні машини.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Ізоляція</h3>
+            <p>Уникайте конфліктів між різними версіями залежностей.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Переносимість</h3>
+            <p>Запускайте контейнери на будь-якій платформі.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Простота</h3>
+            <p>Інтуїтивний інтерфейс для швидкої роботи з контейнерами.</p>
+        </div>
+    </div>
+</section>
 
-<h3 class="subtitle">Типовий сценарій використання Docker</h3>
-<p class="description">Прикладом використання Docker є створення ізольованого середовища для розробки. Команда може створити образ із базовим набором інструментів для розробки, наприклад, з певною версією Node.js або Python. Цей образ можна використовувати для налаштування ідентичного середовища для кожного члена команди, незалежно від операційної системи.</p>
+<!-- Типовий сценарій -->
+<section class="use-case-section">
+    <h2 class="section-title">Як використовується Docker?</h2>
+    <div class="use-case-container">
+        <div class="use-case-text">
+            <p>Docker допомагає розробникам створювати ідентичні середовища для команди. Наприклад, можна створити образ із визначеною версією Node.js або Python для розробки, тестування та деплойменту без конфліктів.</p>
+        </div>
+        <div class="use-case-image">
+            <img src="img/docker-use-cases.png" alt="Docker Use Case" class="use-case-illustration">
+        </div>
+    </div>
+</section>
 
-<h3 class="subtitle">Переваги Docker</h3>
-<ul class="benefit-list">
-  <li><strong>Прискорення розробки та тестування:</strong> Розробники можуть швидко створювати контейнери для тестування нового коду або бібліотек.</li>
-  <li><strong>Безперервна інтеграція та доставка:</strong> Docker дозволяє легко інтегруватися з CI/CD системами, автоматизуючи деплоймент.</li>
-  <li><strong>Ефективність використання ресурсів:</strong> Контейнери займають менше ресурсів порівняно з віртуальними машинами, що допомагає економити кошти та збільшувати продуктивність.</li>
-  <li><strong>Масштабованість:</strong> Docker-контейнери легко масштабуються на великій кількості серверів.</li>
-</ul>
+<!-- Переваги Docker -->
+<section class="benefits-section">
+    <h2 class="section-title">Переваги Docker</h2>
+    <div class="benefits-list">
+        <div class="benefit-item">
+            <h3>Швидкість</h3>
+            <p>Прискорює розробку та тестування нових функцій.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>CI/CD інтеграція</h3>
+            <p>Легко інтегрується з системами автоматизації.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Масштабованість</h3>
+            <p>Простий спосіб масштабування на великі серверні кластери.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>Ефективність</h3>
+            <p>Контейнери споживають менше ресурсів, економлячи кошти.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Стилі -->
+<style>
+    /* Базові стилі для сторінки */
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+    }
+
+    h2, h3 {
+        color: #72c9e6;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, #73c8ff, #34a0ff);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        color: #ffffff;
+        margin: 20px 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0db7ed;
+        background-color: white;
+        border-radius: 25px;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Секції сторінки */
+    .info-section, .timeline-section, .architecture-section, .features-section, .use-case-section, .benefits-section {
+        padding: 60px 20px;
+        background: white;
+        margin: 20px 0;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    /* Сітка для секцій */
+    .info-container, .use-case-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .info-text, .use-case-text {
+        flex: 1;
+        font-size: 1.1rem;
+    }
+
+    .info-image, .use-case-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .info-image img, .use-case-image img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Хронологія */
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-left: 4px solid #0db7ed;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        bottom: 0;
+        width: 12px;
+        background: #0db7ed;
+        border-radius: 50%;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding: 15px;
+        background: #eaf6fb;
+        border-radius: 10px;
+    }
+
+    .timeline-year {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #0a96c2;
+    }
+
+    /* Особливості та переваги */
+    .features-list, .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .feature-item, .benefit-item {
+        background: #eaf6fb;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-item:hover, .benefit-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Адаптивність */
+    @media (max-width: 768px) {
+        .info-container, .use-case-container {
+            flex-direction: column;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+</style>

@@ -18,6 +18,8 @@
  * Customize the background color to match your design.
  */
 
+
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -252,6 +254,7 @@ textarea {
     color: white;
     padding: 1rem;
     text-align: center;
+    position: fixed;
   }
 
   /* Навігація */
@@ -761,7 +764,7 @@ body {
 /* Стиль для плавної анімації переходів */
 #content {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 #content.visible {
   opacity: 1;

@@ -1,3 +1,5 @@
+
+
 function loadContent(page) {
   const contentDiv = document.getElementById('content');
 

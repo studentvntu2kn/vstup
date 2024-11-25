@@ -851,4 +851,35 @@ body {
 }
 
 
+/* Стиль для футера */
+.footer {
+  background-color: #343a40; /* Темний фон */
+  color: #ffffff; /* Білий текст */
+  text-align: center; /* Центрування тексту */
+  padding: 1em 0; /* Відступи */
+  font-size: 1em; /* Розмір тексту */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Тінь для футера */
+  position: fixed; /* Закріплений футер */
+  bottom: 0;
+  width: 100%; /* Займає всю ширину */
+  animation: footerSlideIn 1s ease-out; /* Анімація появи */
+}
+
+/* Анімація появи футера */
+@keyframes footerSlideIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hover ефект для тексту */
+.footer p:hover {
+  color: #12d9f3; /* Бірюзовий текст */
+  transition: color 0.3s ease;
+}
 
